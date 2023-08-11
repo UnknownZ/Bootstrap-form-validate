@@ -15,99 +15,104 @@
 </head>
 
 <body>
-    <div class="container-fluid rounded bg-light border rounded border-dark-subtle">
-        <div class="row bg-secondary-subtle">
-            <h2>Payment form example</h2>
-        </div>
-        <div class="row">
-            <p class="alert-danger" role="alert">Some fields are missing</p>
-        </div>
-        <div class="row">
-            <div class="col-5">
-                <label for="">Card #</label> <br>
-                <input type="text" class="form-control" name="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" id="txtCardNum">
+    <form id="paymentForm" class="needs-validation" novalidate>
+        <div class="container-fluid rounded bg-light border rounded border-dark-subtle">
+            <div class="row bg-secondary-subtle">
+                <h2>Payment form example</h2>
             </div>
-            <div class="col-3">
-                <label for="">CVC #</label><br>
-                <input type="text" name="CVC" class="form-control" placeholder="000" id="txtCVC">
-            </div>
-            <div class="col-4">
-                <label for="">Amount</label> <br>
-                <input type="number" class="form-control" name="amount" id="numAmoun">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <label for="">First Name</label> <br>
-                <input type="text" class="form-control" name="firstName" id="txtFirstName">
-            </div>
-            <div class="col-6">
-                <label for="">Last Name</label> <br>
-                <input type="text" class="form-control" name="lastName" id="txtLastName">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <label for="">City</label> <br>
-                <input type="text" class="form-control" name="city" id="txtCity">
-            </div>
-            <div class="col-3">
-                <label for="">State</label> <br>
-                <select name="State" class="form-select" id="selState">
-                    <option value="Ari">Arica y Parinacota</option>
-                    <option value="Tar">Tarapaca</option>
-                    <option value="Ant">Antofagasta</option>
-                    <option value="Ata">Atacamena</option>
-                    <option value="Coq">Coquimbo</option>
-                    <option value="Val">Valparaíso</option>
-                    <option value="Lib">Libertador General Bernardo O’Higgins</option>
-                    <option value="Mau">Maule</option>
-                    <option value="Ñub">Ñuble</option>
-                    <option value="Bio">Bio bio</option>
-                    <option value="Ara">Araucanía</option>
-                    <option value="Rio">Los Ríos</option>
-                    <option value="Lag">Los Lagos</option>
-                    <option value="Ays">Aysén del General Carlos Ibáñez del Campo</option>
-                    <option value="Mag">Magallanes y Antártica chilena</option>
-                    <option value="Met">Metropolitana de Santiago</option>
-                </select>
-            </div>
-            <div class="col-3">
-                <label for="">Postal Code</label> <br>
-                <input class="form-control" type="number" name="postalCode" id="numPostal">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <label for="">We Accept: </label> <br>
-                <div class=" col-3 bg-secondary border border-secondary rounded">
-                    <input type="radio" name="card" id="raMC" value="Mastercard"><label for=""><i
-                            class="fa-brands fa-cc-mastercard"></i></label>
-                    <input type="radio" name="card" id="raVI" value="Visa"><label for=""><i
-                            class="fa-brands fa-cc-visa"></i></label>
-                    <input type="radio" name="card" id="raDC" value="DinersClub"><label for=""><i
-                            class="fa-brands fa-cc-diners-club"></i></label>
-                    <input type="radio" name="card" id="raAE" value="AmericanExpress"><label for=""><i
-                            class="fa-brands fa-cc-amex"></i></label>
+            <div class="fields row">
+                <div class="alert">
                 </div>
             </div>
-            <div class="col-6">
-                <label for="Message">Message</label>
-                <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea> <br>    
-                <label for="Message">Add any notes here.</label>
+            <div class="row">
+                <div class="col-5">
+                    <label for="txtCardNum">Card #</label> <br>
+                    <input type="text" pattern="[0-9]{4}[0-9]{4}-[0-9]{4}-[0-9]{4}" class="form-control"
+                        name="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" id="txtCardNum">
+                </div>
+                <div class="col-3">
+                    <label for="txtCVC">CVC #</label><br>
+                    <input type="text" name="CVC" class="form-control" placeholder="0000" id="txtCVC">
+                </div>
+                <div class="col-4">
+                    <label for="numAmoun">Amount</label> <br>
+                    <input type="number" class="form-control" name="amount" id="numAmoun">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label for="txtFirstName">First Name</label> <br>
+                    <input type="text" class="form-control" name="firstName" id="txtFirstName">
+                </div>
+                <div class="col-6">
+                    <label for="txtLastName">Last Name</label> <br>
+                    <input type="text" class="form-control" name="lastName" id="txtLastName">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label for="txtCity">City</label> <br>
+                    <input type="text" class="form-control" name="city" id="txtCity">
+                </div>
+                <div class="col-3">
+                    <label for="selState">state</label> <br>
+                    <select name="state" class="form-select" id="selState">
+                        <option value="Non" selected>Seleccione</option>
+                        <option value="Ari">Arica y Parinacota</option>
+                        <option value="Tar">Tarapaca</option>
+                        <option value="Ant">Antofagasta</option>
+                        <option value="Ata">Atacama</option>
+                        <option value="Coq">Coquimbo</option>
+                        <option value="Val">Valparaíso</option>
+                        <option value="Lib">Libertador General Bernardo O’Higgins</option>
+                        <option value="Mau">Maule</option>
+                        <option value="Ñub">Ñuble</option>
+                        <option value="Bio">Bio bio</option>
+                        <option value="Ara">Araucanía</option>
+                        <option value="Rio">Los Ríos</option>
+                        <option value="Lag">Los Lagos</option>
+                        <option value="Ays">Aysén del General Carlos Ibáñez del Campo</option>
+                        <option value="Mag">Magallanes y Antártica chilena</option>
+                        <option value="Met">Metropolitana de Santiago</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label for="numPostal">Postal Code</label> <br>
+                    <input class="form-control" type="number" name="postalCode" id="numPostal">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <label for="raCard">We Accept: </label> <br>
+                    <div class=" col-3 bg-secondary border border-secondary rounded">
+                        <input type="radio" name="card" id="raCard" value="Mastercard" checked="checked"><label
+                            for="raMC"><i class="fa-brands fa-cc-mastercard"></i></label>
+                        <input type="radio" name="card" id="raCard" value="Visa"><label for="raVI"><i
+                                class="fa-brands fa-cc-visa"></i></label>
+                        <input type="radio" name="card" id="raCard" value="DinersClub"><label for="raDC"><i
+                                class="fa-brands fa-cc-diners-club"></i></label>
+                        <input type="radio" name="card" id="raCard" value="AmericanExpress"><label for="raAE"><i
+                                class="fa-brands fa-cc-amex"></i></label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" name="message" id="message" cols="30" rows="5"></textarea> <br>
+                    <label for="message">Add any notes here.</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <input class="btn btn-secondary" type="button" value="Cancel">
+                    <input class="btn btn-primary" type="submit" value="Submit">
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <input class="btn btn-secondary" type="button" value="Cancel">
-            <input class="btn btn-primary" type="submit" value="Submit">
-        </div>
-        </div>
-    </div>
-
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+    <script src="/main.js"></script>
 </body>
 
 </html>
